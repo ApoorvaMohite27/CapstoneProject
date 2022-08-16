@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ body {
+  	background-image: url("https://www.birlasoft.com/sites/default/files/about-us-lp-banner_0.jpg");
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: 100% 100%;
+	background-image-shadow: 2px 2px 4px #000000;
+}
+table,th,tr{
+	font-size:110%;
+	shadow: 2px 2px 4px #000000;
+}
+</style>
+<script language="JavaScript" type="text/javascript">
+<!--
+function ValidateEmail(mail) 
+{
+	var testemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if (mail.value.match(testemail)) {
+		return true;
+	}
+	else{
+		alert("You have entered an invalid email address!");
+		return false;
+	}
+}
+function ValidatePass(pass){
+	if(pass.value.search(/[A-Z]/)==-1){
+		alert("Password must be atleast 1 Upper case character!");
+		return false;
+	}
+	if(pass.value.search(/[a-z]/)==-1){
+		alert("Password must be atleast 1 Lower case character!");
+		return false;
+	}
+	if(pass.value.search(/[~\!\@\#\$\%\^\&\*\(\)\_\-\+\=\,\<\>\.\|]/)==-1){
+		alert("Password must be atleast 1 Special Symbol!");
+		return false;
+	}
+	if(pass.value.search(/[0-9]/)==-1){
+		alert("Password must be atleast 1 Numeric character!");
+		return false;
+	}
+	if(pass.value.length < 8){
+		alert("Password must be atleast 8 characters!");
+		return false;
+	}
+	return true;
+}
+
+function fCheckRequired( txtBox, errSpan )
+{
+var isValid = false;
+if( txtBox.value == "" )
+{
+errSpan.innerText = "*";
+}
+else
+{
+errSpan.innerText = "";
+isValid = true;
+}
+return isValid;
+}
+
+function fValidateEmail(){
+var isValid = fCheckRequired( window.document.Form2.maiId, document.getElementById('errmailId') );
+return isValid;
+}
+
+function fPass()
+{
+var isValid = fCheckRequired( window.document.Form2.pwd, document.getElementById('errpass') );
+return isValid;
+}
+
+function fValidateAll()
+{
+var isValidEmail, isValidPass;
+isValidEmail = fValidateEmail();
+isValidPass = fPass();
+return( isValidName && isValidPhone && isValidEmail && isValidPass && isValidConPass);
+}
+// -->
+</script>
+</head>
+<body><br><br>
+<h1 style="text-align:center;color:#FFFFFF;font-size:60px;text-shadow: 2px 2px 4px #000000;;">Welcome to Birlasoft</h1>
+<form id="Form2" name="Form2" method="post" onSubmit="JavaScript:return fValidateAll();">
+<table id="Table1" border="0" cellpadding="25" cellspacing="0" align="center" bgcolor="#FFFFFF">
+	<tr>
+		<th align="right">Email ID :</th>
+		<td align="left">
+		<input type="email" id="maiId" name="mailId" size="40" maxlength="40" required
+			onchange="JavaScript: ValidateEmail(document.Form2.mailId);" />
+			<span id="errmailId" class="err"></span> </td>
+
+	</tr>
+	<tr>
+		<th align="right">Password :</th>
+		<td align="left">
+		<input type="password" id="pwd" name="pwd" size="40" maxlength="40" required
+			onchange="JavaScript: ValidatePass(document.Form2.pwd);" />
+			<span id="errpass" class="err"></span> </td>
+	</tr>
+	<tr>
+		<td colspan="2" align="right">
+		<input type="submit" id="btnSubmit" name="btnSubmit" value="Login" style="font-size:15px;padding:5px;"/>
+
+	</tr>
+	<tr>
+		<th align="left"></th>
+		<td align="right" style="color:red;font-size:70%;"><a href = "file:///C:/Users/apoorvam/Desktop/HTML/capstone%20project/Capstone%20Project1.html">*If you are new user click on regisration.</td>
+	</tr>
+
+
+</table>
+</form>
+</body>
+
+</html>
