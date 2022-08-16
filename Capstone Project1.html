@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1{background-color:#E6976C;text-align:center;border:1px solid black;padding: 25px 50px 25px 50px}
+#Table3
+{
+border-top: 2px solid black;
+border-left: 2px solid black;
+border-bottom: 2px solid black;
+border-right: 2px solid black;
+font-family: Verdana, Arial;
+font-size: 12pt;
+}
+#Table4
+{
+border-top: 2px solid black;
+border-left: 2px solid black;
+border-bottom: 2px solid black;
+border-right: 2px solid black;
+font-family: Verdana, Arial;
+font-size: 12pt;
+}
+#Table5
+{
+border-top: 2px solid black;
+border-left: 2px solid black;
+border-bottom: 2px solid black;
+border-right: 2px solid black;
+font-family: Verdana, Arial;
+font-size: 12pt;
+}
+#Table6
+{
+border-top: 2px solid black;
+border-left: 2px solid black;
+border-bottom: 2px solid black;
+border-right: 2px solid black;
+font-family: Verdana, Arial;
+font-size: 12pt;
+}
+input[type=submit], input[type=reset] {
+border: 2px solid black;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+float: right;
+background-color:#DDDDDD
+}
+</style>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function ValidateName(na){
+	var user = /^[A-Za-z]+$/;
+	if(na.value.match(user)){
+		return true;
+	}
+	else{
+		alert("You have entered an invalid Name.It must be character only!");
+		return false;
+	}
+	
+}
+function ValidatePhone(pho){
+	var phone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	if(pho.value.match(phone)) {
+		return true;      
+	}
+	else{
+		if(pho.value.length!=10){
+			alert("Mobile number must be 10 digits!");
+			return false;
+		}
+		else{
+			alert("Mobile number must be a digits!");
+			return false;
+		}
+	}	
+}
+function ValidateNumber(num){
+	var number = /^[0-9]{6}$/; 
+	if(num.value.match(number)){
+		return true;		
+	}
+	else{
+		alert("Please enter number!");
+		return false;
+	}
+}
+function ValidateEmail(mail) 
+{
+	var testemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if (mail.value.match(testemail)) {
+		return true;
+	}
+	else{
+		alert("You have entered an invalid email address!");
+		return false;
+	}
+}
+
+function ValidatePass(pass){
+	if(pass.value.search(/[A-Z]/)==-1){
+		alert("Password must be atleast 1 Upper case character!");
+		return false;
+	}
+	if(pass.value.search(/[a-z]/)==-1){
+		alert("Password must be atleast 1 Lower case character!");
+		return false;
+	}
+	if(pass.value.search(/[~\!\@\#\$\%\^\&\*\(\)\_\-\+\=\,\<\>\.\|]/)==-1){
+		alert("Password must be atleast 1 Special Symbol!");
+		return false;
+	}
+	if(pass.value.search(/[0-9]/)==-1){
+		alert("Password must be atleast 1 Numeric character!");
+		return false;
+	}
+	if(pass.value.length < 8){
+		alert("Password must be atleast 8 characters!");
+		return false;
+	}
+	return true;
+}
+function ValidateConPass(){
+	var pw1 = document.getElementById("pass").value;  
+	var pw2 = document.getElementById("conpass").value;  
+	if(pw1 != pw2) {  
+    		alert("Passwords did not match"); 
+    		return false; 
+	}
+	return true;  
+}
+
+function fClearAll()
+{
+	errfName.innerText = "";
+	errmName.innerText = "";
+	errlName.innerText = "";
+	errfatName.innerText = "";
+	errmotName.innerText ="";
+	errbdate.innerText = "";
+	errTelPhone.innerText = "";
+	errperAdd.innerText = "";
+	errcityName.innerText = "";
+	errstateName.innerText ="";
+	errcountryName.innerText = "";
+	errpincode.innerText = "";
+	errpositionname.innerText = "";
+	errlocationname.innerText = "";
+	errempId.innerText ="";
+	erroffmailId.innerText ="";
+	errmailId.innerText ="";
+	errpass.innerText ="";
+	errconpass.innerText ="";
+}
+
+
+// -->
+</script>
+</head>
+<body>
+<h1>Registration Form</h1><br><br>
+<form id="Form3" name="Form3" method="post" action="file:///C:/Users/apoorvam/Desktop/HTML/Capstone%20Project12.html?mailId=&pwd=&btnSubmit=Login">
+
+<table id="Table3" border="0" cellpadding="20" cellspacing="0" align="center" style="background-color:#DDDDDD">
+<tr>
+	<th id="TableHeading" colspan="2" align="left" style="font-size:120%;">Personal Details</th>
+</tr>
+
+<tr>
+	<th align="right">First Name :</th>
+	<td align="left">
+		<input type="text" id="fName" name="fName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.fName);"/>
+		<span id="errfName" class="err"></span></td>
+	
+	<th align="right">Middle Name :</th>
+	<td align="left">
+		<input type="text" id="mName" name="mName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.mName);"/>
+		<span id="errmName" class="err"></span></td>
+
+	<th align="right">Last Name :</th>
+	<td align="left">
+		<input type="text" id="lName" name="lName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.lName);"/>
+		<span id="errlName" class="err"></span></td>
+</tr>
+<tr>
+	
+	<th align="right">Father Name :</th>
+	<td align="left">
+		<input type="text" id="fatName" name="fatName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.fatName);"/>
+		<span id="errfatName" class="err"></span></td>
+
+	<th align="right">Mother Name :</th>
+	<td align="left">
+		<input type="text" id="motName" name="motName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.motName);"/>
+		<span id="errmotName" class="err"></span></td>
+
+</tr>
+<tr>
+	<th align="right">Birthdate :</th>
+	<td align="left">
+		<input type="date" id="bdate" name="bdate" required>
+		<span id="errbdate" class="err"></span></td>
+
+	<th align="right">Gender :</th>
+	<td aign="left" required>
+		<input type="radio" id="male" name="gendername" value="Male">
+  		<label for="male">Male</label><br>
+  		<input type="radio" id="female" name="gendername" value="Female">
+  		<label for="female">Female</label><br>
+  		<input type="radio" id="others" name="gendername" value="Other">
+  		<label for="others">Other</label><br>
+	</td>
+
+	<th align="right">Blood Group :</th>
+	<td align="left>
+	<input type="select" id="bg" name="bg" required>
+	<select> 
+            <option value=""selected disabled>Choose from list</option>       
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+		<option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+       </select>
+	</td>
+</tr>
+<tr>
+	<th align="right">Marital Status :</th>
+	<td aign="left" required>
+		<input type="radio" id="single" name="mast" value="Single">
+  		<label for="single">Single</label><br>
+  		<input type="radio" id="married" name="mast" value="Married">
+  		<label for="married">Married</label><br>
+  		<input type="radio" id="widowed" name="mast" value="Widowed">
+  		<label for="widowed">Widowed</label><br>
+		<input type="radio" id="divorced" name="mast" value="divorced">
+  		<label for="divorced">Divorced</label>
+	</td>
+
+	<th align="right">Mobile Number :</th>
+	<td align="left">
+	<input type="tel" id="telPhone" name="telPhone" size="10" maxlength="10" required
+	onchange="JavaScript:ValidatePhone(document.Form3.telPhone);" />
+	<span id="errTelPhone" class="err"></span>
+	</td>
+</tr>
+</table>
+<br><br>
+<table id="Table4" border="0" cellpadding="20" cellspacing="0" align="center" style="background-color:#DDDDDD">
+<tr>
+	<th id="TableHeading1" colspan="2" align="left" style="font-size:120%;">Address Details</th>
+</tr>
+
+<tr>
+	<th align="right">Nationality :</th>
+	<td aign="left">
+		<input type="radio" id="ind" name="title" value="Indian">
+  		<label for="indian">Indian</label>
+  		<input type="radio" id="noind" name="title" value="Non-Indian">
+  		<label for="nonindian">Non-Indian</label>
+	</td>
+</tr>
+<tr>
+	<th align="right" >Address :</th>
+	<td align="left"colspan="2">
+		<input type="text" id="addrName" name="addrName" size="105" maxlength="105" required>
+		<span id="errperAdd" class="err"></span> </td>
+</tr>
+<tr>
+	<th align="right">City :</th>
+	<td align="left">
+		<input type="text" id="cityName" name="cityName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.cityName);" />
+		<span id="errcityName" class="err"></span> </td>
+
+	<th align="right">State :</th>
+	<td align="left">
+		<input type="text" id="stateName" name="stateName" size="20" maxlength="20" required	
+		onchange="JavaScript: ValidateName(document.Form3.stateName);" />
+		<span id="errstateName" class="err"></span> </td>
+</tr>
+<tr>
+	<th align="right">Country :</th>
+	<td align="left">
+		<input type="text" id="countryName" name="countryName" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.countryName);" />
+		<span id="errcountryName" class="err"></span> </td>
+
+	<th align="right">Pincode :</th>
+	<td align="left">
+		<input type="text" id="pin" name="pin" size="20" maxlength="20"required pattern="^[0-9]{6}$" title="Enter Valid Pin Code"
+ 		onchange="JavaScript: ValidateNumber(document.Form3.pin);"/>
+		<span id="errpincode" class="err"></span> </td>
+
+</tr>
+
+</table>
+<br><br>
+<table id="Table5" border="0" cellpadding="20" cellspacing="0" align="center" style="background-color:#DDDDDD">
+<tr>
+	<th id="TableHeading2" colspan="2" align="left" style="font-size:120%;">Employee Details</th>
+</tr>
+<tr>
+	<th align="right">Position :</th>
+	<td align="left">
+		<input type="text" id="positionname" name="positionname" size="20" maxlength="20" required
+		onchange="JavaScript: ValidateName(document.Form3.positionname);" />
+		<span id="errpositionname" class="err"></span> </td>
+
+	
+	<th align="right">Joinig Date :</th>
+	<td align="left">
+	<input type="date" id="doj" name="DOJ" required>
+	</td>
+
+	<th align="right">Location :</th>
+	<td align="left">
+	<input type="text" id="locationname" name="location" size="20" maxlength="20" required
+	onchange="JavaScript: ValidateName(document.Form3.location);" />
+	<span id="errlocationname" class="err"></span> </td>
+</tr>
+<tr>
+	<th align="right">Employee ID :</th>
+	<td align="left">
+	<input type="text" id="empid" name="empid" size="20" maxlength="20" required
+	onchange="JavaScript: ValidateNumber(document.Form3.empid);" />
+	<span id="errempId" class="err"></span> </td>
+
+	<th align="right">Official MailID :</th>
+	<td align="left">
+	<input type="email" id="offmailId" name="offmailId" size="29" maxlength="29" required
+	onchange="JavaScript: ValidateEmail(document.Form3.offmailId);" />
+	<span id="erroffmailId" class="err"></span> </td>
+
+</tr>
+</table>
+<br><br>
+<table id="Table6" border="0" cellpadding="20" cellspacing="0" align="center" style="background-color:#DDDDDD">
+<tr>
+	<th id="TableHeading3" colspan="2" align="left" style="font-size:120%;">Login Details</th>
+</tr>
+<tr>
+	<th align="right">Mail ID :</th>
+	<td align="left">
+	<input type="email" id="mailId" name="mailId" size="30" maxlength="30" required
+	onchange="JavaScript: ValidateEmail(document.Form3.mailId);" />
+	<span id="errmailId" class="err"></span> </td>
+</tr>
+<tr>
+	<th align="right">Password :</th>
+	<td align="left">
+	<input type="password" id="pass" name="pass" size="30" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
+	onchange="JavaScript: ValidatePass(document.Form3.pass);" />
+	<span id="errpass" class="err"></span> </td>
+
+</tr>
+<tr>
+	<th align="right">Confirm Password :</th>
+	<td align="left">
+	<input type="password" id="conpass" name="confirmpass" size="30" maxlength="30" required
+	onchange="JavaScript: ValidateConPass();" />
+	<span id="errconpass" class="err"></span> </td>
+
+</tr>
+</table><br><br>
+<input type="submit" value="Submit"
+	onchange="alert(Sucessfully Submitted!!)"/>
+
+
+<input type="reset" id="btnReset" name="reset" value="Reset"
+onClick="JavaScript: fClearAll();" />
+
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
